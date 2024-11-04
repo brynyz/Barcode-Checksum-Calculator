@@ -120,6 +120,8 @@ class BarcodeChecksum(QMainWindow):
         elif len(text)==11:
             checkdigit = "UPC Check digit:                  " + str(self.calculateUPC(text)) + "  "
             self.ui.Label_Show_CheckDigit.setText(checkdigit)
+        else:
+            self.ui.Label_Show_CheckDigit.setText("Invalid: Enter 11(UPC) or 12(EAN) digits")
 
     def push_show_solution(self):
         if self.first_calculate:
